@@ -9,7 +9,7 @@ import requests
 import re
 import pdb
 
-REPO_URL = 'https://github.com/OnurKaral/MADTemplate.git'
+REPO_URL = 'https://github.com/OnurKaral/MADTemplate'
 ORIGINAL_PACKAGE_NAME = 'com.onrkrl.madtemplate'
 ZIP_UNIX_SYSTEM = 3
 
