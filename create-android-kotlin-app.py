@@ -7,7 +7,7 @@ import io
 import zipfile
 import requests
 import re
-
+import pdb
 
 REPO_URL = 'https://github.com/OnurKaral/MADTemplate.git'
 ORIGINAL_PACKAGE_NAME = 'com.onrkrl.madtemplate'
@@ -132,7 +132,7 @@ def fetch_latest_archive() -> bytes:
         # Handle the case where the 'location' header is missing
         raise ValueError("The 'location' header is missing in the response.")
     
-    latest_tag = r.headers['location'].split('/')[-1]
+    latest_tag = "0.0.1"
     archive_url = REPO_URL + '/archive/%s.zip' % latest_tag
     
     return requests.get(archive_url).content
