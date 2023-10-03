@@ -127,8 +127,14 @@ class TextProcessor:
 
 def fetch_latest_archive() -> bytes:
     r = requests.get(REPO_URL + '/releases/latest', allow_redirects=False)
+    
+    if 'location' not in r.headers:
+        # Handle the case where the 'location' header is missing
+        raise ValueError("The 'location' header is missing in the response.")
+    
     latest_tag = r.headers['location'].split('/')[-1]
     archive_url = REPO_URL + '/archive/%s.zip' % latest_tag
+    
     return requests.get(archive_url).content
 
 
