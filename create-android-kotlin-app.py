@@ -127,10 +127,8 @@ class TextProcessor:
 
 def fetch_latest_archive() -> bytes:
     r = requests.get(REPO_URL + '/releases/latest', allow_redirects=False)
-    
-    latest_tag = "0.0.1"
+    latest_tag = r.headers['location'].split('/')[-1]
     archive_url = REPO_URL + '/archive/%s.zip' % latest_tag
-    
     return requests.get(archive_url).content
 
 
