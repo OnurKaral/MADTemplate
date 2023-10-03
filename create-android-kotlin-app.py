@@ -166,7 +166,7 @@ def main():
 
     print('Unzipping template files...\n')
     ProjectCreator(archive_data, project_name, package_name).create()
-    print('Done. Happy hacking!')
+    print('Done.')
 
 
 if __name__ == '__main__':
